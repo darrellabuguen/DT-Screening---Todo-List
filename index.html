@@ -13,8 +13,8 @@
         <h1>To-Do List <img src="./src/assets/list-solid.svg" alt="img"></h1>
         <br>
         <div class="add-task-container">
-            <input type="text" name="task-input" id="task-input" autocomplete="off">
-            <input type="button" value="Add">
+            <input type="text" name="task-input" id="task-input" autocomplete="off" onkeydown="getKey(event)">
+            <input type="button" value="Add" onclick="addTask()">
         </div>
         <div class="to-do-list"></div>
     </div>
