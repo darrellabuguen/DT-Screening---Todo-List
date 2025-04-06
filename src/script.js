@@ -66,6 +66,9 @@ const checkStatus = (event) => {
 
 const deleteTask = (ids, parent) => {
     const index = tasks.findIndex(task => task.id == ids);
-    parent.children[index].remove();
-    tasks.splice(index, 1);
+    parent.children[index].classList.add("removed");
+    setTimeout(() => {
+        parent.children[index].remove();
+        tasks.splice(index, 1);
+    }, 600)
 }
