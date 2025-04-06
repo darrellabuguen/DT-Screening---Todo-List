@@ -6,7 +6,6 @@
 }
 
 .to-do-container {
-    margin: 2rem auto;
     border-radius: 15px;
     padding: 2rem;
 }
@@ -83,6 +82,7 @@ h1 {
 @media screen and (min-width: 0px) {
     .to-do-container {
         width: 100%;
+        margin: 0 auto;
         background-color: transparent;
     }
 
@@ -93,6 +93,7 @@ h1 {
 
 @media screen and (min-width: 425px) {
     .to-do-container {
+        margin: 2rem auto;
         width: 90%;
         background-color: whitesmoke;
     }
