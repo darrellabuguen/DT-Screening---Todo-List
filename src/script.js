@@ -42,8 +42,14 @@ const createElement = (id, content, to_do_list) => {
     p.textContent = content;
     p.classList.add("task-content");
 
+    //create and set contents, class, and click event of delete button
+    const delete_btn = document.createElement("button");
+    delete_btn.classList.add("delete-btn");
+    delete_btn.innerHTML = "<img src='./src/assets/delete.svg' alt='Delete' >";
+    delete_btn.onclick = () => { deleteTask(div.getAttribute("id"), to_do_list) };
+
     //append the checkbox, p, and delete button to the div tag
-    div.append(check_box, p);
+    div.append(check_box, p, delete_btn);
 
     //append the task to the list
     to_do_list.append(div);
@@ -56,4 +62,10 @@ const checkStatus = (event) => {
     } else {
         content.classList.remove("finished")
     }
+}
+
+const deleteTask = (ids, parent) => {
+    const index = tasks.findIndex(task => task.id == ids);
+    parent.children[index].remove();
+    tasks.splice(index, 1);
 }
