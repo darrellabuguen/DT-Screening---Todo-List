@@ -30,6 +30,7 @@ const createElement = (id, content, to_do_list) => {
     //create a checkbox
     const check_box = document.createElement("input");
     check_box.setAttribute("type", "checkbox");
+    check_box.addEventListener("click", checkStatus);
 
     //create a div tag
     const div = document.createElement("div");
@@ -46,4 +47,13 @@ const createElement = (id, content, to_do_list) => {
 
     //append the task to the list
     to_do_list.append(div);
+}
+
+const checkStatus = (event) => {
+    const content = event.target.parentElement.children[1]; //select the p tag
+    if (!content.classList.contains("finished")) {
+        content.classList.add("finished")
+    } else {
+        content.classList.remove("finished")
+    }
 }
